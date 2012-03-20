@@ -18,6 +18,145 @@ class EventsController < ApplicationController
     end
   end
 
+  # GET /events/fishbowl
+  # GET /events/fishbowl.xml
+  def fishbowl   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:room => 'fishbowl')
+    @events.each do |event|
+      unless event.room == "fishbowl"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  # GET /events/bricks
+  # GET /events/bricks.xml
+  def bricks   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:room => 'bricks')
+    @events.each do |event|
+      unless event.room == "bricks"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  # GET /events/holodeck
+  # GET /events/holodeck.xml
+  def holodeck   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:room => 'holodeck')
+    @events.each do |event|
+      unless event.room == "holodeck"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  # GET /events/holodeck
+  # GET /events/holodeck.xml
+  def pod_bay   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:room => 'pod_bay')
+    @events.each do |event|
+      unless event.room == "pod_bay"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  # GET /events/twenty_one_fifty
+  # GET /events/twenty_one_fifty.xml
+  def twenty_one_fifty   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:room => 'twenty_one_fifty')
+    @events.each do |event|
+      unless event.room == "twenty_one_fifty"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  # GET /events/loft
+  # GET /events/loft.xml
+  def loft   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:room => 'loft')
+    @events.each do |event|
+      unless event.room == "loft"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  
   # GET /events/1
   # GET /events/1.xml
   def show
@@ -41,6 +180,12 @@ class EventsController < ApplicationController
     end
   end
 
+  # GET /events/new
+  # GET /events/new.xml
+  def test
+    render( :text => 'Hello Everyone!' )
+  end
+  
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])

@@ -1,7 +1,21 @@
 Calendar::Application.routes.draw do
+  match "events/fishbowl", :to => "events#fishbowl"
+  match "events/bricks", :to => "events#bricks"
+  match "events/holodeck", :to => "events#holodeck"
+  match "events/pod_bay", :to => "events#pod_bay"
+  match "events/twenty_one_fifty", :to => "events#twenty_one_fifty"
+  match "events/loft", :to => "events#loft"
+  
   resources :events
 
-  get "calendar/index"
+  match "fishbowl", :to => "calendar#fishbowl"
+  match "bricks", :to => "calendar#bricks"
+  match "holodeck", :to => "calendar#holodeck"
+  match "pod_bay", :to => "calendar#pod_bay"
+  match "twenty_one_fifty", :to => "calendar#twenty_one_fifty"
+  match "loft", :to => "calendar#loft"
+  
+  # get "calendar/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -9,6 +23,7 @@ Calendar::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  # match "events/fishbowl", :to => "events#fishbowl"
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -55,7 +70,7 @@ Calendar::Application.routes.draw do
   # root :to => "welcome#index"
 
   root :to => "calendar#index"
-  
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
