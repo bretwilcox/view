@@ -4,4 +4,4 @@ db/schema.rb
 log/*.log
 tmp/
 vendor/ruby
-app/views/.DS_Store
+.DS_Store
