@@ -1,11 +1,11 @@
 /*
- * FullCalendar v1.5.1 Stylesheet
+ * FullCalendar v1.5.2 Stylesheet
  *
  * Copyright (c) 2011 Adam Shaw
  * Dual licensed under the MIT and GPL licenses, located in
  * MIT-LICENSE.txt and GPL-LICENSE.txt respectively.
  *
- * Date: Sat Apr 9 14:09:51 2011 -0700
+ * Date: Sun Dec 11 16:18:18 2011 +0200
  *
  */
 
@@ -431,6 +431,49 @@ table.fc-border-separate {
 	
 
 /* Month View, Basic Week View, Basic Day View
+------------------------------------------------------------------------*/
+
+.fc-grid th {
+	text-align: center;
+	}
+	
+.fc-grid .fc-day-number {
+	float: right;
+	padding: 0 2px;
+	}
+	
+.fc-grid .fc-other-month .fc-day-number {
+	opacity: 0.3;
+	filter: alpha(opacity=30); /* for IE */
+	/* opacity with small font can sometimes look too faded
+	   might want to set the 'color' property instead
+	   making day-numbers bold also fixes the problem */
+	}
+	
+.fc-grid .fc-day-content {
+	clear: both;
+	padding: 2px 2px 1px; /* distance between events and day edges */
+	}
+	
+/* event styles */
+	
+.fc-grid .fc-event-time {
+	font-weight: bold;
+	}
+	
+/* right-to-left */
+	
+.fc-rtl .fc-grid .fc-day-number {
+	float: left;
+	}
+	
+.fc-rtl .fc-grid .fc-event-time {
+	float: right;
+	}
+	
+	
+
+/* Resource week, Resource day
 ------------------------------------------------------------------------*/
 
 .fc-grid th {

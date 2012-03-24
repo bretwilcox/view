@@ -5,6 +5,14 @@ Calendar::Application.routes.draw do
   match "events/pod_bay", :to => "events#pod_bay"
   match "events/twenty_one_fifty", :to => "events#twenty_one_fifty"
   match "events/loft", :to => "events#loft"
+  match "events/upstairs_whiteboard_1", :to => "events#upstairs_whiteboard_1"
+  match "events/upstairs_whiteboard_2", :to => "events#upstairs_whiteboard_2"
+  match "events/upstairs_whiteboard_3", :to => "events#upstairs_whiteboard_3"
+  match "events/upstairs_whiteboard_4", :to => "events#upstairs_whiteboard_4"
+  match "events/upstairs_whiteboard_5", :to => "events#upstairs_whiteboard_5"
+  match "events/visitor_parking_space_3", :to => "events#visitor_parking_space_3"
+  
+
   
   resources :events
 
@@ -14,6 +22,12 @@ Calendar::Application.routes.draw do
   match "pod_bay", :to => "calendar#pod_bay"
   match "twenty_one_fifty", :to => "calendar#twenty_one_fifty"
   match "loft", :to => "calendar#loft"
+  match "upstairs_whiteboard_1", :to => "calendar#upstairs_whiteboard_1"
+  match "upstairs_whiteboard_2", :to => "calendar#upstairs_whiteboard_2"
+  match "upstairs_whiteboard_3", :to => "calendar#upstairs_whiteboard_3"
+  match "upstairs_whiteboard_4", :to => "calendar#upstairs_whiteboard_4"
+  match "upstairs_whiteboard_5", :to => "calendar#upstairs_whiteboard_5"
+  match "visitor_parking_space_3", :to => "calendar#visitor_parking_space_3"
   
   # get "calendar/index"
 

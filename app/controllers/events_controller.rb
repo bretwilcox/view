@@ -29,9 +29,9 @@ class EventsController < ApplicationController
     @events = Event.scoped  
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-    @events = @events.where(:room => 'fishbowl')
+    @events = @events.where(:resource => 'fishbowl')
     @events.each do |event|
-      unless event.room == "fishbowl"
+      unless event.resource == "fishbowl"
       end
     end
     respond_to do |format|
@@ -52,9 +52,9 @@ class EventsController < ApplicationController
     @events = Event.scoped  
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-    @events = @events.where(:room => 'bricks')
+    @events = @events.where(:resource => 'bricks')
     @events.each do |event|
-      unless event.room == "bricks"
+      unless event.resource == "bricks"
       end
     end
     respond_to do |format|
@@ -75,9 +75,9 @@ class EventsController < ApplicationController
     @events = Event.scoped  
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-    @events = @events.where(:room => 'holodeck')
+    @events = @events.where(:resource => 'holodeck')
     @events.each do |event|
-      unless event.room == "holodeck"
+      unless event.resource == "holodeck"
       end
     end
     respond_to do |format|
@@ -98,9 +98,9 @@ class EventsController < ApplicationController
     @events = Event.scoped  
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-    @events = @events.where(:room => 'pod_bay')
+    @events = @events.where(:resource => 'pod_bay')
     @events.each do |event|
-      unless event.room == "pod_bay"
+      unless event.resource == "pod_bay"
       end
     end
     respond_to do |format|
@@ -121,9 +121,9 @@ class EventsController < ApplicationController
     @events = Event.scoped  
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-    @events = @events.where(:room => 'twenty_one_fifty')
+    @events = @events.where(:resource => 'twenty_one_fifty')
     @events.each do |event|
-      unless event.room == "twenty_one_fifty"
+      unless event.resource == "twenty_one_fifty"
       end
     end
     respond_to do |format|
@@ -144,9 +144,9 @@ class EventsController < ApplicationController
     @events = Event.scoped  
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-    @events = @events.where(:room => 'loft')
+    @events = @events.where(:resource => 'loft')
     @events.each do |event|
-      unless event.room == "loft"
+      unless event.resource == "loft"
       end
     end
     respond_to do |format|
@@ -156,6 +156,133 @@ class EventsController < ApplicationController
     end
   end
   
+  # GET /events/upstairs_whiteboard_1
+  # GET /events/upstairs_whiteboard_1.xml
+  def upstairs_whiteboard_1  
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:resource => 'upstairs_whiteboard_1')
+    @events.each do |event|
+      unless event.resource == "upstairs_whiteboard_1"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  def upstairs_whiteboard_2   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:resource => 'upstairs_whiteboard_2')
+    @events.each do |event|
+      unless event.resource == "upstairs_whiteboard_2"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  def upstairs_whiteboard_3   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:resource => 'upstairs_whiteboard_3')
+    @events.each do |event|
+      unless event.resource == "upstairs_whiteboard_3"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  def upstairs_whiteboard_4   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:resource => 'upstairs_whiteboard_4')
+    @events.each do |event|
+      unless event.resource == "upstairs_whiteboard_4"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  def upstairs_whiteboard_5   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:resource => 'upstairs_whiteboard_5')
+    @events.each do |event|
+      unless event.resource == "upstairs_whiteboard_5"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
+  
+  def visitor_parking_space_3   
+    # full_calendar will hit the index method with query parameters
+    # 'start' and 'end' in order to filter the results for the
+    # appropriate month/week/day.  It should be possiblt to change
+    # this to be starts_at and ends_at to match rails conventions.
+    # I'll eventually do that to make the demo a little cleaner.
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.where(:resource => 'visitor_parking_space_3')
+    @events.each do |event|
+      unless event.resource == "visitor_parking_space_3"
+      end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @events }
+      format.js  { render :json => @events }
+    end
+  end
   
   # GET /events/1
   # GET /events/1.xml
