@@ -12,6 +12,7 @@ gem 'rails', '3.2.2'
 # gem 'sqlite3'
 
 gem 'mysql2'
+gem 'activerecord-mysql-adapter'
 
 # Use unicorn as the web server
 # gem 'unicorn'
