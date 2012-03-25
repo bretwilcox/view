@@ -11,7 +11,7 @@ gem 'rails', '3.0.7'
 
 # gem 'sqlite3'
 
-gem 'mysql2'
+gem 'mysql2', '0.2.18'
 
 # Use unicorn as the web server
 # gem 'unicorn'
