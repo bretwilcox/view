@@ -7,16 +7,21 @@
 # Visit http://www.pragmaticprogrammer.com/titles/cbdepra for more book information.
 #---
 require 'bundler/capistrano'
+
+set :default_environment, {
+    'PATH' => "/opt/ruby/bin/:/usr/local/bin:/bin:/usr/bin:/bin",
+}
+
 set :application, "view"
 set :scm, :git
-set :repository, "git://github.com/deployingrails/massiveapp.git"
+set :repository, "git://github.com/bretwilcox/view.git"
 server "localhost", :app, :db, :primary => true
 ssh_options[:port] = 2222
-ssh_options[:keys] = "/Users/bret/Dropbox/ssh"
+ssh_options[:keys] = "/Users/bret/Dropbox/ssh/id_rsa"
 set :user, "vagrant"
 set :group, "vagrant"
 set :deploy_to, "/var/view"
-set :use_sudo, false
+set :use_sudo, true
 set :deploy_via, :copy
 set :copy_strategy, :export
 namespace :deploy do
